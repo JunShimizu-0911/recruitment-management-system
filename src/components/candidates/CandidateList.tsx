@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Pencil, Trash2, Search, Filter, UserPlus, Eye } from 'lucide-react';
+import { Pencil, Trash2, Search, Filter, UserPlus, Eye, ArrowUpDown } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
 import type { Candidate } from '../../types/candidate';
+
+type SortField = 'name' | 'position' | 'status' | 'created_at';
+type SortDirection = 'asc' | 'desc';
 
 export const CandidateList: React.FC = () => {
   const [candidates, setCandidates] = useState<Candidate[]>([]);
@@ -11,18 +14,20 @@ export const CandidateList: React.FC = () => {
   const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null);
   const [editStatusId, setEditStatusId] = useState<string | null>(null);
   const [isUpdating, setIsUpdating] = useState(false);
+  const [sortField, setSortField] = useState<SortField>('created_at');
+  const [sortDirection, setSortDirection] = useState<SortDirection>('desc');
   const navigate = useNavigate();
 
   useEffect(() => {
     fetchCandidates();
-  }, []);
+  }, [sortField, sortDirection]);
 
   const fetchCandidates = async () => {
     try {
       const { data, error } = await supabase
         .from('candidates')
         .select('*')
-        .order('created_at', { ascending: false });
+        .order(sortField, { ascending: sortDirection === 'asc' });
 
       if (error) throw error;
       setCandidates(data || []);
@@ -31,6 +36,24 @@ export const CandidateList: React.FC = () => {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleSort = (field: SortField) => {
+    if (field === sortField) {
+      // Toggle direction if clicking the same field
+      setSortDirection(prev => prev === 'asc' ? 'desc' : 'asc');
+    } else {
+      // Set new field and default to ascending
+      setSortField(field);
+      setSortDirection('asc');
+    }
+  };
+
+  const getSortIcon = (field: SortField) => {
+    if (field === sortField) {
+      return <ArrowUpDown className={`h-4 w-4 inline-block ml-1 ${sortDirection === 'asc' ? 'transform rotate-180' : ''}`} />;
+    }
+    return null;
   };
 
   const handleDelete = async (id: string) => {
@@ -177,11 +200,19 @@ export const CandidateList: React.FC = () => {
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th
+                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer group"
+                onClick={() => handleSort('name')}
+              >
                 候補者
+                {getSortIcon('name')}
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th
+                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer group"
+                onClick={() => handleSort('position')}
+              >
                 ポジション
+                {getSortIcon('position')}
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 現職
@@ -189,11 +220,19 @@ export const CandidateList: React.FC = () => {
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 経験年数
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th
+                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer group"
+                onClick={() => handleSort('status')}
+              >
                 ステータス
+                {getSortIcon('status')}
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th
+                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer group"
+                onClick={() => handleSort('created_at')}
+              >
                 応募日
+                {getSortIcon('created_at')}
               </th>
               <th className="relative px-6 py-3">
                 <span className="sr-only">アクション</span>
