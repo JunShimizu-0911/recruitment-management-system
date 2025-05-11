@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
 import type { Candidate } from '../../types/candidate';
 
-type SortField = 'name' | 'position' | 'status' | 'created_at';
+type SortField = 'last_name' | 'position' | 'status' | 'created_at';
 type SortDirection = 'asc' | 'desc';
 
 export const CandidateList: React.FC = () => {
@@ -202,10 +202,10 @@ export const CandidateList: React.FC = () => {
             <tr>
               <th
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer group"
-                onClick={() => handleSort('name')}
+                onClick={() => handleSort('last_name')}
               >
                 候補者
-                {getSortIcon('name')}
+                {getSortIcon('last_name')}
               </th>
               <th
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer group"
