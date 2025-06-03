@@ -142,7 +142,7 @@ export const Dashboard: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="bg-white shadow p-6">
           <div className="flex items-center">
-            <div className="p-2 bg-blue-100 rounded-lg">
+            <div className="p-2 bg-blue-100">
               <Users className="h-6 w-6 text-blue-600" />
             </div>
             <div className="ml-4">
@@ -152,9 +152,9 @@ export const Dashboard: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="bg-white shadow p-6">
           <div className="flex items-center">
-            <div className="p-2 bg-green-100 rounded-lg">
+            <div className="p-2 bg-green-100">
               <TrendingUp className="h-6 w-6 text-green-600" />
             </div>
             <div className="ml-4">
@@ -166,9 +166,9 @@ export const Dashboard: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="bg-white shadow p-6">
           <div className="flex items-center">
-            <div className="p-2 bg-purple-100 rounded-lg">
+            <div className="p-2 bg-purple-100">
               <Calendar className="h-6 w-6 text-purple-600" />
             </div>
             <div className="ml-4">
@@ -180,9 +180,9 @@ export const Dashboard: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6">
+        <div className="bg-white shadow p-6">
           <div className="flex items-center">
-            <div className="p-2 bg-yellow-100 rounded-lg">
+            <div className="p-2 bg-yellow-100">
               <BarChart3 className="h-6 w-6 text-yellow-600" />
             </div>
             <div className="ml-4">
@@ -205,7 +205,7 @@ export const Dashboard: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* 選考状況 */}
-        <div className="bg-white rounded-lg shadow">
+        <div className="bg-white shadow">
           <div className="px-6 py-4 border-b border-gray-200">
             <h3 className="text-lg font-medium text-gray-900">選考状況</h3>
           </div>
@@ -217,9 +217,9 @@ export const Dashboard: React.FC = () => {
                     {getStatusLabel(status)}
                   </div>
                   <div className="flex-1">
-                    <div className="relative h-4 bg-gray-100 rounded-full">
+                    <div className="relative h-4 bg-gray-100">
                       <div
-                        className="absolute h-4 bg-blue-600 rounded-full"
+                        className="absolute h-4 bg-blue-600"
                         style={{
                           width: `${(count / stats.totalCandidates) * 100}%`
                         }}
@@ -234,7 +234,7 @@ export const Dashboard: React.FC = () => {
         </div>
 
         {/* 応募経路分析 */}
-        <div className="bg-white rounded-lg shadow">
+        <div className="bg-white shadow">
           <div className="px-6 py-4 border-b border-gray-200">
             <h3 className="text-lg font-medium text-gray-900">応募経路分析</h3>
           </div>
@@ -246,9 +246,9 @@ export const Dashboard: React.FC = () => {
                     {getSourceLabel(source)}
                   </div>
                   <div className="flex-1">
-                    <div className="relative h-4 bg-gray-100 rounded-full">
+                    <div className="relative h-4 bg-gray-100">
                       <div
-                        className="absolute h-4 bg-green-600 rounded-full"
+                        className="absolute h-4 bg-green-600"
                         style={{
                           width: `${(count / stats.totalCandidates) * 100}%`
                         }}
@@ -265,7 +265,7 @@ export const Dashboard: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* 今後の面接予定 */}
-        <div className="bg-white rounded-lg shadow">
+        <div className="bg-white shadow">
           <div className="px-6 py-4 border-b border-gray-200">
             <h3 className="text-lg font-medium text-gray-900">今後の面接予定</h3>
           </div>
@@ -305,7 +305,7 @@ export const Dashboard: React.FC = () => {
         </div>
 
         {/* 最近の活動 */}
-        <div className="bg-white rounded-lg shadow">
+        <div className="bg-white shadow">
           <div className="px-6 py-4 border-b border-gray-200">
             <h3 className="text-lg font-medium text-gray-900">最近の活動</h3>
           </div>
