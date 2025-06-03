@@ -25,7 +25,7 @@ export const Sidebar: React.FC = () => {
     <>
       <button
         type="button"
-        className="lg:hidden fixed top-4 left-4 z-20 rounded-md p-2 text-white bg-primary shadow hover:bg-primary/85 focus:outline-none focus:ring-2 focus:ring-white"
+        className="lg:hidden fixed top-4 left-4 z-20 p-2 text-white bg-primary shadow hover:bg-primary/85 focus:outline-none focus:ring-2 focus:ring-white"
         onClick={toggleSidebar}
       >
         <span className="sr-only">サイドバーを開く</span>
@@ -47,7 +47,7 @@ export const Sidebar: React.FC = () => {
         <div className="flex h-full flex-col">
           <div className="flex h-16 items-center justify-center border-b border-white/10 px-4">
             <div className="flex items-center">
-              <div className="rounded-md bg-white/10 p-2">
+              <div className="bg-white/10 p-2">
                 <Users className="h-6 w-6 text-white" />
               </div>
               <h2 className="ml-2 text-xl font-bold text-white">Bianca</h2>
@@ -65,7 +65,7 @@ export const Sidebar: React.FC = () => {
           </nav>
 
           <div className="border-t border-white/10 p-4">
-            <button className="flex w-full items-center rounded-md px-2 py-2 text-sm font-medium text-white/80 hover:bg-white/5 hover:text-white">
+            <button className="flex w-full items-center px-2 py-2 text-sm font-medium text-white/80 hover:bg-white/5 hover:text-white">
               <LogOut className="mr-3 h-5 w-5 text-white/80" />
               <span>ログアウト</span>
             </button>
@@ -91,8 +91,8 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ icon, label, to }) => {
       to={to}
       className={`group flex items-center rounded-md px-2 py-2 text-sm font-medium ${
         isActive
-          ? 'bg-white/10 text-white'
-          : 'text-white/80 hover:bg-white/5 hover:text-white'
+          ? 'bg-white/10 text-white border-l-4 border-white'
+          : 'text-white/80 hover:bg-white/5 hover:text-white border-l-4 border-transparent'
       }`}
     >
       <div className={`mr-3 ${isActive ? 'text-white' : 'text-white/80 group-hover:text-white'}`}>
