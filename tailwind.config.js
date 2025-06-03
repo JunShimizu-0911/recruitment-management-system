@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         cream: '#FFFAF0',
-        primary: '#000000',
+        primary: 'var(--color-gray-800)',
       },
       opacity: {
         '85': '0.85',
