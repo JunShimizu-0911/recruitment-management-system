@@ -8,7 +8,7 @@ export default {
       },
       colors: {
         primary: '#1F2937',
-        cream: '#F3F4F6',
+        cream: '#E5E7EB',
       },
       opacity: {
         '85': '0.85',
