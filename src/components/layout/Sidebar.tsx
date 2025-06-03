@@ -25,7 +25,7 @@ export const Sidebar: React.FC = () => {
     <>
       <button
         type="button"
-        className="lg:hidden fixed top-4 left-4 z-20 rounded-md p-2 text-gray-500 bg-white shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="lg:hidden fixed top-4 left-4 z-20 rounded-md p-2 text-white bg-primary shadow hover:bg-primary/85 focus:outline-none focus:ring-2 focus:ring-white"
         onClick={toggleSidebar}
       >
         <span className="sr-only">サイドバーを開く</span>
@@ -34,15 +34,15 @@ export const Sidebar: React.FC = () => {
 
       {isOpen && (
         <div 
-          className="fixed inset-0 z-10 bg-gray-600 bg-opacity-75 lg:hidden"
+          className="fixed inset-0 z-10 bg-black/50 lg:hidden"
           onClick={toggleSidebar}
         ></div>
       )}
 
       <aside
-        className={`fixed inset-y-0 left-0 z-10 w-64 transform bg-white shadow-lg transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0 ${
+        className={`fixed inset-y-0 left-0 z-10 w-64 transform bg-primary shadow-lg transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
-        } bg-primary text-white`}
+        }`}
       >
         <div className="flex h-full flex-col">
           <div className="flex h-16 items-center justify-center border-b border-white/10 px-4">
@@ -64,9 +64,9 @@ export const Sidebar: React.FC = () => {
             </div>
           </nav>
 
-          <div className="border-t border-gray-200 p-4">
-            <button className="flex w-full items-center rounded-md px-2 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900">
-              <LogOut className="mr-3 h-5 w-5 text-gray-500" />
+          <div className="border-t border-white/10 p-4">
+            <button className="flex w-full items-center rounded-md px-2 py-2 text-sm font-medium text-white/80 hover:bg-white/5 hover:text-white">
+              <LogOut className="mr-3 h-5 w-5 text-white/80" />
               <span>ログアウト</span>
             </button>
           </div>
