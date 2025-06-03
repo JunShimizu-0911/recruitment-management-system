@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#000000',
+        primary: '#1F2937',
         cream: '#FFFAF0',
       },
       opacity: {
