@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        cream: '#000000',
-        primary: '#000000',
+        cream: '#FFFAF0',
+        primary: '#FFFAF0',
       },
       opacity: {
         '85': '0.85',
