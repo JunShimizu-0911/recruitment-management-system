@@ -11,18 +11,20 @@ export const CandidateList: React.FC = () => {
   const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null);
   const [editStatusId, setEditStatusId] = useState<string | null>(null);
   const [isUpdating, setIsUpdating] = useState(false);
+  const [sortField, setSortField] = useState<string>('created_at');
+  const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
   const navigate = useNavigate();
 
   useEffect(() => {
     fetchCandidates();
-  }, []);
+  }, [sortField, sortDirection]);
 
   const fetchCandidates = async () => {
     try {
       const { data, error } = await supabase
         .from('candidates')
         .select('*')
-        .order('created_at', { ascending: false });
+        .order(sortField, { ascending: sortDirection === 'asc' });
 
       if (error) throw error;
       setCandidates(data || []);
@@ -139,6 +141,33 @@ export const CandidateList: React.FC = () => {
     );
   });
 
+  const handleSort = (field: string) => {
+    setSortDirection(currentDirection => {
+      if (sortField !== field) return 'asc';
+      return currentDirection === 'asc' ? 'desc' : 'asc';
+    });
+    setSortField(field);
+  };
+
+  const SortHeader: React.FC<{
+    field: string;
+    children: React.ReactNode;
+  }> = ({ field, children }) => (
+    <th
+      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+      onClick={() => handleSort(field)}
+    >
+      <div className="flex items-center space-x-1">
+        <span>{children}</span>
+        {sortField === field && (
+          <span className="text-gray-400">
+            {sortDirection === 'asc' ? '↑' : '↓'}
+          </span>
+        )}
+      </div>
+    </th>
+  );
+
   return (
     <div className="bg-white shadow">
       <div className="px-6 py-4 border-b border-gray-200">
@@ -177,24 +206,24 @@ export const CandidateList: React.FC = () => {
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <SortHeader field="last_name">
                 候補者
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              </SortHeader>
+              <SortHeader field="position">
                 ポジション
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              </SortHeader>
+              <SortHeader field="current_company">
                 現職
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              </SortHeader>
+              <SortHeader field="experience">
                 経験年数
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              </SortHeader>
+              <SortHeader field="status">
                 ステータス
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              </SortHeader>
+              <SortHeader field="created_at">
                 応募日
-              </th>
+              </SortHeader>
               <th className="relative px-6 py-3">
                 <span className="sr-only">アクション</span>
               </th>
