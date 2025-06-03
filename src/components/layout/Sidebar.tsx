@@ -42,15 +42,15 @@ export const Sidebar: React.FC = () => {
       <aside
         className={`fixed inset-y-0 left-0 z-10 w-64 transform bg-white shadow-lg transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
+        } bg-primary text-white`}
       >
         <div className="flex h-full flex-col">
-          <div className="flex h-16 items-center justify-center border-b border-gray-200 px-4">
+          <div className="flex h-16 items-center justify-center border-b border-white/10 px-4">
             <div className="flex items-center">
-              <div className="rounded-md bg-blue-600 p-2">
+              <div className="rounded-md bg-white/10 p-2">
                 <Users className="h-6 w-6 text-white" />
               </div>
-              <h2 className="ml-2 text-xl font-bold text-gray-900">Bianca</h2>
+              <h2 className="ml-2 text-xl font-bold text-white">Bianca</h2>
             </div>
           </div>
 
@@ -91,11 +91,11 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ icon, label, to }) => {
       to={to}
       className={`group flex items-center rounded-md px-2 py-2 text-sm font-medium ${
         isActive
-          ? 'bg-blue-50 text-blue-700'
-          : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+          ? 'bg-white/10 text-white'
+          : 'text-white/80 hover:bg-white/5 hover:text-white'
       }`}
     >
-      <div className={`mr-3 ${isActive ? 'text-blue-700' : 'text-gray-500 group-hover:text-gray-900'}`}>
+      <div className={`mr-3 ${isActive ? 'text-white' : 'text-white/80 group-hover:text-white'}`}>
         {icon}
       </div>
       {label}
