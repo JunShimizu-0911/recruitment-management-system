@@ -50,22 +50,22 @@ export const Sidebar: React.FC = () => {
               <div className="bg-white/10 p-2">
                 <Users className="h-6 w-6 text-white" />
               </div>
-              <h2 className="ml-2 text-xl font-bold text-white">Bianca</h2>
+              <h2 className="ml-2 text-2xl font-bold text-white">Bianca</h2>
             </div>
           </div>
 
           <nav className="flex-1 overflow-y-auto px-2 py-4">
             <div className="space-y-1">
-              <SidebarItem icon={<Home className="h-5 w-5" />} label="ダッシュボード" to="/" />
-              <SidebarItem icon={<Users className="h-5 w-5" />} label="候補者一覧" to="/candidates" />
-              <SidebarItem icon={<Calendar className="h-5 w-5" />} label="面接予定" to="/interviews" />
-              <SidebarItem icon={<UserCog className="h-5 w-5" />} label="ユーザー管理" to="/users" />
-              <SidebarItem icon={<Settings className="h-5 w-5" />} label="設定" to="/settings" />
+              <SidebarItem icon={<Home className="h-5 w-5" />} label="ダッシュボード" to="/" className="text-base" />
+              <SidebarItem icon={<Users className="h-5 w-5" />} label="候補者一覧" to="/candidates" className="text-base" />
+              <SidebarItem icon={<Calendar className="h-5 w-5" />} label="面接予定" to="/interviews" className="text-base" />
+              <SidebarItem icon={<UserCog className="h-5 w-5" />} label="ユーザー管理" to="/users" className="text-base" />
+              <SidebarItem icon={<Settings className="h-5 w-5" />} label="設定" to="/settings" className="text-base" />
             </div>
           </nav>
 
           <div className="border-t border-white/10 p-4">
-            <button className="flex w-full items-center px-2 py-2 text-sm font-medium text-white/80 hover:bg-white/5 hover:text-white">
+            <button className="flex w-full items-center px-2 py-2 text-base font-medium text-white/80 hover:bg-white/5 hover:text-white">
               <LogOut className="mr-3 h-5 w-5 text-white/80" />
               <span>ログアウト</span>
             </button>
@@ -80,16 +80,17 @@ interface SidebarItemProps {
   icon: React.ReactNode;
   label: string;
   to: string;
+  className?: string;
 }
 
-const SidebarItem: React.FC<SidebarItemProps> = ({ icon, label, to }) => {
+const SidebarItem: React.FC<SidebarItemProps> = ({ icon, label, to, className }) => {
   const location = useLocation();
   const isActive = location.pathname === to;
 
   return (
     <Link
       to={to}
-      className={`group flex items-center rounded-md px-2 py-2 text-sm font-medium ${
+      className={`group flex items-center px-2 py-2 font-medium ${className} ${
         isActive
           ? 'bg-white/10 text-white border-l-4 border-white'
           : 'text-white/80 hover:bg-white/5 hover:text-white border-l-4 border-transparent'
