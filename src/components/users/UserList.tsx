@@ -68,7 +68,7 @@ export const UserList: React.FC = () => {
   };
 
   return (
-    <div className="bg-white shadow rounded-lg">
+    <div className="bg-white shadow">
       <div className="px-6 py-4 border-b border-gray-200">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-semibold text-gray-900">ユーザー管理</h2>
@@ -77,7 +77,7 @@ export const UserList: React.FC = () => {
               setSelectedUserId(undefined);
               setShowForm(true);
             }}
-            className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700"
+            className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700"
           >
             <Users className="h-4 w-4 mr-2" />
             新規ユーザー

@@ -90,7 +90,7 @@ export const InterviewCalendar: React.FC = () => {
   };
 
   return (
-    <div className="bg-white shadow rounded-lg">
+    <div className="bg-white shadow">
       <div className="px-6 py-4 border-b border-gray-200">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-semibold text-gray-900">面接予定</h2>
@@ -115,7 +115,7 @@ export const InterviewCalendar: React.FC = () => {
       </div>
 
       <div className="p-6">
-        <div className="grid grid-cols-7 gap-px bg-gray-200 border border-gray-200 rounded-lg overflow-hidden">
+        <div className="grid grid-cols-7 gap-px bg-gray-200 border border-gray-200 overflow-hidden">
           {['月', '火', '水', '木', '金', '土', '日'].map((day) => (
             <div
               key={day}
@@ -144,7 +144,7 @@ export const InterviewCalendar: React.FC = () => {
                   {dayInterviews.map((interview) => (
                     <div
                       key={interview.id}
-                      className="px-2 py-1 text-xs rounded bg-blue-50 text-blue-700 truncate"
+                      className="px-2 py-1 text-xs bg-blue-50 text-blue-700 truncate"
                     >
                       {interview.candidate.lastName} {interview.candidate.firstName}
                       <div className="text-blue-500 text-xs">
