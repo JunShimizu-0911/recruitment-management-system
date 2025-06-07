@@ -1,0 +1,28 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ECDC4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#44A08D;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景円 -->
+  <circle cx="100" cy="100" r="95" fill="#f8f9ff" stroke="#e0e6ff" stroke-width="3"/>
+  
+  <!-- 左の人物 -->
+  <circle cx="70" cy="70" r="20" fill="url(#grad3)"/>
+  <path d="M40 110 Q40 90 70 90 Q100 90 100 110 L100 140 L40 140 Z" fill="url(#grad3)" opacity="0.8"/>
+  
+  <!-- 右の人物 -->
+  <circle cx="130" cy="70" r="20" fill="#FFE66D"/>
+  <path d="M100 110 Q100 90 130 90 Q160 90 160 110 L160 140 L100 140 Z" fill="#FFE66D" opacity="0.8"/>
+  
+  <!-- ハート -->
+  <path d="M90 40 Q90 32 96 32 Q102 32 102 40 Q102 32 108 32 Q114 32 114 40 Q114 48 102 56 Q99 53 90 40 Z" fill="#FF6B6B"/>
+  
+  <!-- 装飾的な小さな円 -->
+  <circle cx="40" cy="160" r="3" fill="#FF6B6B" opacity="0.6"/>
+  <circle cx="160" cy="160" r="2" fill="#4ECDC4" opacity="0.7"/>
+  <circle cx="170" cy="40" r="4" fill="#FFE66D" opacity="0.5"/>
+  <circle cx="30" cy="30" r="2.5" fill="#4ECDC4" opacity="0.6"/>
+</svg>
