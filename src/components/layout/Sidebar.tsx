@@ -12,6 +12,7 @@ import {
   UserCog
 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import teamRecruitmentIcon from '../../assets/team_recruitment_icon.svg';
 
 export const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,7 +49,7 @@ export const Sidebar: React.FC = () => {
           <div className="flex h-16 items-center justify-center border-b border-white/10 px-4">
             <div className="flex items-center">
               <div className="bg-white/10 p-2">
-                <Users className="h-6 w-6 text-white" />
+                <img src={teamRecruitmentIcon} alt="Team Recruitment" className="h-6 w-6" />
               </div>
               <h2 className="ml-2 text-2xl font-bold text-white">Bianca</h2>
             </div>
