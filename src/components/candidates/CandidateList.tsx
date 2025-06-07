@@ -154,13 +154,13 @@ export const CandidateList: React.FC = () => {
     children: React.ReactNode;
   }> = ({ field, children }) => (
     <th
-      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+      className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider cursor-pointer hover:bg-primary/85"
       onClick={() => handleSort(field)}
     >
       <div className="flex items-center space-x-1">
         <span>{children}</span>
         {sortField === field && (
-          <span className="text-gray-400">
+          <span className="text-white/80">
             {sortDirection === 'asc' ? '↑' : '↓'}
           </span>
         )}
@@ -204,7 +204,7 @@ export const CandidateList: React.FC = () => {
 
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
+          <thead className="bg-primary">
             <tr>
               <SortHeader field="last_name">
                 候補者
@@ -224,7 +224,7 @@ export const CandidateList: React.FC = () => {
               <SortHeader field="created_at">
                 応募日
               </SortHeader>
-              <th className="relative px-6 py-3">
+              <th className="relative px-6 py-3 text-white">
                 <span className="sr-only">アクション</span>
               </th>
             </tr>
