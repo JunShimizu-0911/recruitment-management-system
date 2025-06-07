@@ -100,8 +100,8 @@ export const CandidateHistory: React.FC<CandidateHistoryProps> = ({ candidateId 
 
   return (
     <div className="bg-white shadow rounded-lg">
-      <div className="px-6 py-4 border-b border-gray-200">
-        <h2 className="text-xl font-semibold text-gray-900">変更履歴</h2>
+      <div className="px-6 py-4 border-b border-gray-200 bg-primary">
+        <h2 className="text-xl font-semibold text-white">変更履歴</h2>
       </div>
 
       <div className="p-6">

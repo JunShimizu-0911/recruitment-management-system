@@ -86,9 +86,9 @@ export const CandidateDetails: React.FC = () => {
   return (
     <div className="space-y-6">
       <div className="bg-white shadow rounded-lg">
-        <div className="px-6 py-4 border-b border-gray-200">
+        <div className="px-6 py-4 border-b border-gray-200 bg-primary">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-white">
               候補者詳細
             </h2>
             <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(candidate.status || 'new')}`}>

@@ -218,11 +218,11 @@ export const CandidateForm: React.FC = () => {
 
   return (
     <div className="max-w-5xl mx-auto bg-white rounded-lg shadow overflow-hidden">
-      <div className="px-6 py-4 border-b border-gray-200 bg-gray-50">
-        <h2 className="text-lg font-semibold text-gray-900">
+      <div className="px-6 py-4 border-b border-gray-200 bg-primary">
+        <h2 className="text-lg font-semibold text-white">
           {isEditMode ? '候補者情報の編集' : '新規候補者登録'}
         </h2>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-white/80">
           {isEditMode ? '候補者情報を更新してください' : '候補者情報と関連書類を登録してください'}
         </p>
       </div>
