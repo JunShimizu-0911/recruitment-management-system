@@ -136,8 +136,18 @@ export const CandidateList: React.FC = () => {
       candidate.first_name?.toLowerCase().includes(searchString) ||
       candidate.last_name?.toLowerCase().includes(searchString) ||
       candidate.email?.toLowerCase().includes(searchString) ||
+      candidate.phone?.toLowerCase().includes(searchString) ||
       candidate.position?.toLowerCase().includes(searchString) ||
-      candidate.current_company?.toLowerCase().includes(searchString)
+      candidate.source?.toLowerCase().includes(searchString) ||
+      candidate.current_company?.toLowerCase().includes(searchString) ||
+      candidate.experience?.toString().includes(searchString) ||
+      candidate.available_date?.toLowerCase().includes(searchString) ||
+      candidate.preferred_time?.toLowerCase().includes(searchString) ||
+      candidate.interview_notes?.toLowerCase().includes(searchString) ||
+      candidate.notes?.toLowerCase().includes(searchString) ||
+      candidate.status?.toLowerCase().includes(searchString) ||
+      getPositionLabel(candidate.position).toLowerCase().includes(searchString) ||
+      getStatusLabel(candidate.status || 'new').toLowerCase().includes(searchString)
     );
   });
 
