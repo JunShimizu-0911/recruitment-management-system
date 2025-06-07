@@ -12,7 +12,7 @@ import {
   UserCog
 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import teamRecruitmentIcon from '../../assets/team_recruitment_icon.svg';
+import teamRecruitmentIcon from '../../assets/team_recruitment_icon.png';
 
 export const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
