@@ -48,7 +48,7 @@ export const Sidebar: React.FC = () => {
         <div className="flex h-full flex-col">
           <div className="flex h-16 items-center justify-center border-b border-white/10 px-4">
             <div className="flex items-center">
-              <div className="bg-white/10 p-2">
+              <div className="p-2">
                 <img src={teamRecruitmentIcon} alt="Team Recruitment" className="h-6 w-6" />
               </div>
               <h2 className="ml-2 text-2xl font-bold text-white">Bianca</h2>
