@@ -104,19 +104,19 @@ export const CandidateDetails: React.FC = () => {
               <dl className="space-y-3">
                 <div>
                   <dt className="text-sm font-medium text-gray-500">氏名</dt>
-                  <dd className="mt-1 text-sm text-gray-900">{candidate.firstName} {candidate.lastName}</dd>
+                  <dd className="mt-1 ml-4 text-sm text-gray-900">{candidate.firstName} {candidate.lastName}</dd>
                 </div>
                 <div>
                   <dt className="text-sm font-medium text-gray-500">メールアドレス</dt>
-                  <dd className="mt-1 text-sm text-gray-900">{candidate.email}</dd>
+                  <dd className="mt-1 ml-4 text-sm text-gray-900">{candidate.email}</dd>
                 </div>
                 <div>
                   <dt className="text-sm font-medium text-gray-500">電話番号</dt>
-                  <dd className="mt-1 text-sm text-gray-900">{candidate.phone}</dd>
+                  <dd className="mt-1 ml-4 text-sm text-gray-900">{candidate.phone}</dd>
                 </div>
                 <div>
                   <dt className="text-sm font-medium text-gray-500">応募ポジション</dt>
-                  <dd className="mt-1 text-sm text-gray-900">{candidate.position}</dd>
+                  <dd className="mt-1 ml-4 text-sm text-gray-900">{candidate.position}</dd>
                 </div>
               </dl>
             </div>
@@ -126,19 +126,19 @@ export const CandidateDetails: React.FC = () => {
               <dl className="space-y-3">
                 <div>
                   <dt className="text-sm font-medium text-gray-500">応募経路</dt>
-                  <dd className="mt-1 text-sm text-gray-900">{candidate.source || '未設定'}</dd>
+                  <dd className="mt-1 ml-4 text-sm text-gray-900">{candidate.source || '未設定'}</dd>
                 </div>
                 <div>
                   <dt className="text-sm font-medium text-gray-500">現在/前職の会社名</dt>
-                  <dd className="mt-1 text-sm text-gray-900">{candidate.currentCompany || '未設定'}</dd>
+                  <dd className="mt-1 ml-4 text-sm text-gray-900">{candidate.currentCompany || '未設定'}</dd>
                 </div>
                 <div>
                   <dt className="text-sm font-medium text-gray-500">経験年数</dt>
-                  <dd className="mt-1 text-sm text-gray-900">{candidate.experience ? `${candidate.experience}年` : '未設定'}</dd>
+                  <dd className="mt-1 ml-4 text-sm text-gray-900">{candidate.experience ? `${candidate.experience}年` : '未設定'}</dd>
                 </div>
                 <div>
                   <dt className="text-sm font-medium text-gray-500">応募日</dt>
-                  <dd className="mt-1 text-sm text-gray-900">
+                  <dd className="mt-1 ml-4 text-sm text-gray-900">
                     {candidate.createdAt && format(new Date(candidate.createdAt), 'yyyy年MM月dd日', { locale: ja })}
                   </dd>
                 </div>
@@ -151,15 +151,15 @@ export const CandidateDetails: React.FC = () => {
             <dl className="space-y-3">
               <div>
                 <dt className="text-sm font-medium text-gray-500">希望日</dt>
-                <dd className="mt-1 text-sm text-gray-900">{candidate.availableDate || '未設定'}</dd>
+                <dd className="mt-1 ml-4 text-sm text-gray-900">{candidate.availableDate || '未設定'}</dd>
               </div>
               <div>
                 <dt className="text-sm font-medium text-gray-500">希望時間帯</dt>
-                <dd className="mt-1 text-sm text-gray-900">{candidate.preferredTime || '未設定'}</dd>
+                <dd className="mt-1 ml-4 text-sm text-gray-900">{candidate.preferredTime || '未設定'}</dd>
               </div>
               <div>
                 <dt className="text-sm font-medium text-gray-500">面接に関する備考</dt>
-                <dd className="mt-1 text-sm text-gray-900 whitespace-pre-wrap">
+                <dd className="mt-1 ml-4 text-sm text-gray-900 whitespace-pre-wrap">
                   {candidate.interviewNotes || '特になし'}
                 </dd>
               </div>
@@ -169,7 +169,7 @@ export const CandidateDetails: React.FC = () => {
           {candidate.notes && (
             <div className="mt-6">
               <h3 className="text-lg font-medium text-gray-900 mb-4">備考</h3>
-              <p className="text-sm text-gray-900 whitespace-pre-wrap">{candidate.notes}</p>
+              <p className="ml-4 text-sm text-gray-900 whitespace-pre-wrap">{candidate.notes}</p>
             </div>
           )}
         </div>
