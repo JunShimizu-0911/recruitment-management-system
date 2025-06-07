@@ -77,7 +77,7 @@ export const UserList: React.FC = () => {
               setSelectedUserId(undefined);
               setShowForm(true);
             }}
-            className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700"
+            className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium text-white bg-gray-800 hover:bg-gray-900"
           >
             <Users className="h-4 w-4 mr-2" />
             新規ユーザー

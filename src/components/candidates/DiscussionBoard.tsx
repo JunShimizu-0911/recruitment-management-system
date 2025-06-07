@@ -91,7 +91,7 @@ export const DiscussionBoard: React.FC<DiscussionBoardProps> = ({ candidateId })
           <textarea
             id="comment"
             rows={3}
-            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
             placeholder="候補者に関する評価やコメントを入力してください..."
             value={newComment}
             onChange={(e) => setNewComment(e.target.value)}
@@ -100,7 +100,7 @@ export const DiscussionBoard: React.FC<DiscussionBoardProps> = ({ candidateId })
             <button
               type="submit"
               disabled={isSubmitting || !newComment.trim()}
-              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? '投稿中...' : 'コメントを投稿'}
             </button>

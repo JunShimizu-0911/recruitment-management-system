@@ -242,7 +242,7 @@ export const CandidateForm: React.FC = () => {
                   name="firstName"
                   value={candidate.firstName}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                   required
                 />
               </div>
@@ -256,7 +256,7 @@ export const CandidateForm: React.FC = () => {
                   name="lastName"
                   value={candidate.lastName}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                   required
                 />
               </div>
@@ -270,7 +270,7 @@ export const CandidateForm: React.FC = () => {
                   name="email"
                   value={candidate.email}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                   required
                 />
               </div>
@@ -284,7 +284,7 @@ export const CandidateForm: React.FC = () => {
                   name="phone"
                   value={candidate.phone}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                   required
                 />
               </div>
@@ -303,7 +303,7 @@ export const CandidateForm: React.FC = () => {
                   name="position"
                   value={candidate.position}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                   required
                 >
                   <option value="">選択してください</option>
@@ -323,7 +323,7 @@ export const CandidateForm: React.FC = () => {
                   name="source"
                   value={candidate.source}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                 >
                   <option value="">選択してください</option>
                   <option value="linkedin">LinkedIn</option>
@@ -342,7 +342,7 @@ export const CandidateForm: React.FC = () => {
                   name="status"
                   value={candidate.status}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                 >
                   <option value="new">新規</option>
                   <option value="reviewing">選考中</option>
@@ -364,7 +364,7 @@ export const CandidateForm: React.FC = () => {
                   onChange={handleInputChange}
                   min="0"
                   max="50"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                 />
               </div>
               <div className="md:col-span-2">
@@ -377,7 +377,7 @@ export const CandidateForm: React.FC = () => {
                   name="currentCompany"
                   value={candidate.currentCompany}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                 />
               </div>
             </div>
@@ -396,7 +396,7 @@ export const CandidateForm: React.FC = () => {
                   name="availableDate"
                   value={candidate.availableDate}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                 />
               </div>
               <div>
@@ -408,7 +408,7 @@ export const CandidateForm: React.FC = () => {
                   name="preferredTime"
                   value={candidate.preferredTime}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                 >
                   <option value="">選択してください</option>
                   <option value="morning">午前（9:00-12:00）</option>
@@ -426,7 +426,7 @@ export const CandidateForm: React.FC = () => {
                   value={candidate.interviewNotes}
                   onChange={handleInputChange}
                   rows={3}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                   placeholder="面接に関する特別な要望や注意事項があればご記入ください"
                 ></textarea>
               </div>
@@ -445,7 +445,7 @@ export const CandidateForm: React.FC = () => {
                 value={candidate.notes}
                 onChange={handleInputChange}
                 rows={4}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                 placeholder="候補者に関する追加情報があればご記入ください"
               ></textarea>
             </div>
@@ -506,14 +506,14 @@ export const CandidateForm: React.FC = () => {
           <button
             type="button"
             onClick={() => navigate('/candidates')}
-            className="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
           >
             キャンセル
           </button>
           <button
             type="submit"
             disabled={isSubmitting}
-            className="rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="rounded-md border border-transparent bg-gray-800 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? '保存中...' : isEditMode ? '更新' : '登録'}
           </button>
