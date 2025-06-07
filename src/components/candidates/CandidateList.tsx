@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Pencil, Trash2, Search, Filter, UserPlus, Eye } from 'lucide-react';
+import { Pencil, Trash2, Search, Filter, UserPlus, Eye, Download } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
 import type { Candidate } from '../../types/candidate';
+import { exportCandidatesToCSV } from '../../utils/csvExport';
 
 export const CandidateList: React.FC = () => {
   const [candidates, setCandidates] = useState<Candidate[]>([]);
@@ -151,6 +152,12 @@ export const CandidateList: React.FC = () => {
     );
   });
 
+  const handleExportCSV = () => {
+    const timestamp = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
+    const filename = `candidates_${timestamp}.csv`;
+    exportCandidatesToCSV(filteredCandidates, filename);
+  };
+
   const handleSort = (field: string) => {
     setSortDirection(currentDirection => {
       if (sortField !== field) return 'asc';
@@ -183,13 +190,22 @@ export const CandidateList: React.FC = () => {
       <div className="px-6 py-4 border-b border-gray-200">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-semibold text-gray-900">候補者一覧</h2>
-          <Link
-            to="/candidates/new"
-            className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-          >
-            <UserPlus className="h-4 w-4 mr-2" />
-            新規候補者
-          </Link>
+          <div className="flex space-x-3">
+            <button
+              onClick={handleExportCSV}
+              className="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+            >
+              <Download className="h-4 w-4 mr-2" />
+              CSV出力
+            </button>
+            <Link
+              to="/candidates/new"
+              className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+            >
+              <UserPlus className="h-4 w-4 mr-2" />
+              新規候補者
+            </Link>
+          </div>
         </div>
 
         <div className="mt-4 flex flex-col sm:flex-row gap-4">
@@ -210,6 +226,13 @@ export const CandidateList: React.FC = () => {
             フィルター
           </button>
         </div>
+        
+        {searchTerm && (
+          <div className="mt-2 text-sm text-gray-600">
+            {filteredCandidates.length}件の候補者が見つかりました
+            {filteredCandidates.length !== candidates.length && ` (全${candidates.length}件中)`}
+          </div>
+        )}
       </div>
 
       <div className="overflow-x-auto">
