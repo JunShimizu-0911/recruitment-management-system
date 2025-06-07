@@ -204,7 +204,7 @@ export const CandidateList: React.FC = () => {
 
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
+          <thead className="bg-primary">
             <tr>
               <SortHeader field="last_name">
                 候補者
