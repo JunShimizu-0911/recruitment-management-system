@@ -10,7 +10,7 @@ interface HistoryEntry {
   created_at: string;
   user: {
     full_name: string;
-  } | null;
+  } | null;                                                            
 }
 
 interface CandidateHistoryProps {
