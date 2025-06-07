@@ -306,7 +306,7 @@ export const Dashboard: React.FC = () => {
 
         {/* 最近の活動 */}
         <div className="bg-white shadow">
-          <div className="px-6 py-2A border-b border-gray-200 bg-primary">
+          <div className="px-6 py-2 border-b border-gray-200 bg-primary">
             <h3 className="text-lg font-medium text-white">最近の活動</h3>
           </div>
           <div className="divide-y divide-gray-200">
