@@ -206,7 +206,7 @@ export const Dashboard: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* 選考状況 */}
         <div className="bg-white shadow">
-          <div className="px-6 py-1 border-b border-gray-200 bg-primary">
+          <div className="px-6 py-3 border-b border-gray-200 bg-primary">
             <h3 className="text-lg font-medium text-white">選考状況</h3>
           </div>
           <div className="p-6">
