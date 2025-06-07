@@ -20,10 +20,12 @@ export const Header: React.FC = () => {
           <div className="flex items-center">
             <button className="flex items-center text-sm font-medium text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500">
               <span className="sr-only">ユーザーメニューを開く</span>
-              <div className="h-8 w-8 bg-gray-100 flex items-center justify-center text-gray-600">
-                <User className="h-5 w-5" />
-              </div>
-              <span className="ml-2 hidden lg:block">人事担当者</span>
+              <img 
+                src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop&crop=face"
+                alt="山田太郎"
+                className="h-8 w-8 rounded-full object-cover"
+              />
+              <span className="ml-2 hidden lg:block">山田太郎</span>
             </button>
           </div>
         </div>
