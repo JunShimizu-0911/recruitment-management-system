@@ -206,8 +206,7 @@ export const Dashboard: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* 選考状況 */}
         <div className="bg-white shadow">
-          <div className="px-6 py-4 border-b border-gray-200">
-            <h3 className="text-lg font-medium text-gray-900">選考状況</h3>
+            <h3 className="text-lg font-medium text-white">選考状況</h3>
           </div>
           <div className="p-6">
             <div className="space-y-4">
@@ -235,8 +234,8 @@ export const Dashboard: React.FC = () => {
 
         {/* 応募経路分析 */}
         <div className="bg-white shadow">
-          <div className="px-6 py-4 border-b border-gray-200">
-            <h3 className="text-lg font-medium text-gray-900">応募経路分析</h3>
+          <div className="px-6 py-4 border-b border-gray-200 bg-primary">
+            <h3 className="text-lg font-medium text-white">応募経路分析</h3>
           </div>
           <div className="p-6">
             <div className="space-y-4">
@@ -266,8 +265,8 @@ export const Dashboard: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* 今後の面接予定 */}
         <div className="bg-white shadow">
-          <div className="px-6 py-4 border-b border-gray-200">
-            <h3 className="text-lg font-medium text-gray-900">今後の面接予定</h3>
+          <div className="px-6 py-4 border-b border-gray-200 bg-primary">
+            <h3 className="text-lg font-medium text-white">今後の面接予定</h3>
           </div>
           <div className="divide-y divide-gray-200">
             {stats.upcomingInterviews.map((interview) => (
@@ -306,8 +305,8 @@ export const Dashboard: React.FC = () => {
 
         {/* 最近の活動 */}
         <div className="bg-white shadow">
-          <div className="px-6 py-4 border-b border-gray-200">
-            <h3 className="text-lg font-medium text-gray-900">最近の活動</h3>
+          <div className="px-6 py-4 border-b border-gray-200 bg-primary">
+            <h3 className="text-lg font-medium text-white">最近の活動</h3>
           </div>
           <div className="divide-y divide-gray-200">
             {stats.recentActivities.map((activity) => (
